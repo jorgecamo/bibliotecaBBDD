@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LibroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,20 +18,10 @@ Route::get('/', function () {
     return view('inicio');
 })->name('inicio');
 
-Route::get('listado', function() {
-    $libros = array(
-    array("titulo" => "El juego de Ender",
-    "autor" => "Orson Scott Card"),
-    array("titulo" => "La tabla de Flandes",
-    "autor" => "Arturo Pérez Reverte"),
-    array("titulo" => "La historia interminable",
-    "autor" => "Michael Ende"),
-    array("titulo" => "El Señor de los Anillos",
-    "autor" => "J.R.R. Tolkien")
-    );
-    return view('listado', compact('libros'));
-    })->name('listado_libros');
+Route::get('listado', [LibroController::class, 'index'])->name('listado_libros');
 
+
+Route::get('listado/{id}', [LibroController::class, 'destroy'])->name('borrar');
 
     Route::get('cortos', function() {
         $cortos = [
