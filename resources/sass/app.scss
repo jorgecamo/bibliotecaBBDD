@@ -1,0 +1,25 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+#padre{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    column-gap: 150px;
+    margin-left: 100px;
+}
+
+.hijo{
+    width: 20%;
+    margin-top: 20px;
+}
+body{
+    margin: 0;
+    overflow: hidden;
+}
