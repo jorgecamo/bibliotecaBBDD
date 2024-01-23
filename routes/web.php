@@ -20,8 +20,11 @@ Route::get('/', function () {
 
 Route::get('listado', [LibroController::class, 'index'])->name('listado_libros');
 
+Route::get('insertarlibro', [LibroController::class, 'create'])->name('insertar');
 
 Route::get('listado/{id}', [LibroController::class, 'destroy'])->name('borrar');
+
+Route::post('listadoguardar', [LibroController::class, 'store'])->name('guardar');
 
     Route::get('cortos', function() {
         $cortos = [

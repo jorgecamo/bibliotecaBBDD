@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Libro;
+use App\Models\Autores;
 use Illuminate\Http\Request;
 
 class LibroController extends Controller
@@ -20,7 +21,8 @@ class LibroController extends Controller
      */
     public function create()
     {
-        //
+        $autores = Autores::get(); //para cargar los autores en el desplegable
+        return view('create',compact('autores'));
     }
 
     /**
@@ -28,7 +30,12 @@ class LibroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    $libro = new Libro();
+    $libro->titulo = $request->get('titulo');
+    $libro->editorial = $request->get('editorial');
+    $libro->precio = $request->get('precio');
+    $libro->save();
+    return redirect()->route('listado_libros'); //Redireccionar al listado.
     }
 
     /**

@@ -24,6 +24,12 @@
     </td>
 </tr>
 
-@endforeach</table>
+@endforeach
+<tr>
+    <td colspan="5" style="text-align: center;">
+    <a class="btn btn-primary" href="{{ route('insertar' )}}" style="width:100%"  >Insertar</a>
+    </td>
+</tr>
+</table>
 {{ $libros->links() }}
 @endsection
