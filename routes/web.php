@@ -24,6 +24,10 @@ Route::get('insertarlibro', [LibroController::class, 'create'])->name('insertar'
 
 Route::get('listado/{id}', [LibroController::class, 'destroy'])->name('borrar');
 
+Route::get('modificar/{id}', [LibroController::class, 'show'])->name('modificar');
+
+Route::put('listadomodificar/{id}', [LibroController::class, 'update'])->name('actualizarmodificar');
+
 Route::post('listadoguardar', [LibroController::class, 'store'])->name('guardar');
 
     Route::get('cortos', function() {

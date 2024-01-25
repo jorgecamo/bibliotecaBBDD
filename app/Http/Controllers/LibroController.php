@@ -34,6 +34,7 @@ class LibroController extends Controller
     $libro->titulo = $request->get('titulo');
     $libro->editorial = $request->get('editorial');
     $libro->precio = $request->get('precio');
+    $libro->autor_id = $request->get('autor_id');
     $libro->save();
     return redirect()->route('listado_libros'); //Redireccionar al listado.
     }
@@ -42,8 +43,11 @@ class LibroController extends Controller
      * Display the specified resource.
      */
     public function show(string $id)
-    {
-        //
+    { 
+        $autores = Autores::get();
+        $libroAModificar = Libro::findOrFail($id);
+        $nombreAutor = Libro::findOrFail($id)->autor->nombre;
+        return view('modify',compact('libroAModificar','autores','nombreAutor'));
     }
 
     /**
@@ -59,7 +63,9 @@ class LibroController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        Libro::findOrFail($id)->update($request->all());
+        return redirect()->route('listado_libros'); //Redireccionar al listado.
+
     }
 
     /**

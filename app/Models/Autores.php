@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Autores extends Model
 {
-    use HasFactory;
+    public function libros(){
+        return $this->hasMany(Libro::class);
+        }
 }
