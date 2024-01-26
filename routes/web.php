@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LibroController;
+use App\Http\Controllers\AutoresController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,10 @@ Route::get('/', function () {
 Route::get('listado', [LibroController::class, 'index'])->name('listado_libros');
 
 Route::get('insertarlibro', [LibroController::class, 'create'])->name('insertar');
+
+Route::get('mostrarautores', [AutoresController::class, 'create'])->name('mostrarautores');
+
+Route::get('listarlibros', [AutoresController::class, 'show'])->name('mostrarlibrosautor');
 
 Route::get('listado/{id}', [LibroController::class, 'destroy'])->name('borrar');
 

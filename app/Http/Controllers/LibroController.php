@@ -75,6 +75,6 @@ class LibroController extends Controller
     {
         Libro::findOrFail($id)->delete();
         $libros = Libro::paginate(5);
-        return view('listado', compact('libros'));
+        return redirect()->route('listado_libros'); //Redireccionar al listado.
     }
 }

@@ -11,6 +11,9 @@
 <li class="nav-item">
 <a class="nav-link" href="{{ route('listado_libros') }}">Listado de libros</a>
 </li>
+<li class="nav-item">
+<a class="nav-link" href="{{ route('mostrarautores') }}">Mostrar libros de un autor</a>
+</li>
 </ul>
 </div>
 </nav>

@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Autores extends Model
 {
     public function libros(){
-        return $this->hasMany(Libro::class);
+        return $this->hasMany(Libro::class,"autor_id");
         }
 }
