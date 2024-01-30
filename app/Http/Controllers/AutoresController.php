@@ -43,6 +43,12 @@ reating a new resource.
         return view('librosautor',compact('libros'));    
     }
 
+    public function api(String $id)
+    {   
+        $libros = Autores::findOrFail($id)->libros;
+        return $libros;    
+    }
+
     /**
      * Show the form for editing the specified resource.
      */

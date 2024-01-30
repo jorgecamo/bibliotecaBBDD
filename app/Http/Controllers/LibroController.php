@@ -77,4 +77,10 @@ class LibroController extends Controller
         $libros = Libro::paginate(5);
         return redirect()->route('listado_libros'); //Redireccionar al listado.
     }
+
+    public function descargarlibro(String $id)
+    {   
+        $libros = Libro::findOrFail($id);
+        return $libros;    
+    }
 }

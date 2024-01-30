@@ -27,6 +27,10 @@ Route::get('mostrarautores', [AutoresController::class, 'create'])->name('mostra
 
 Route::get('listarlibros', [AutoresController::class, 'show'])->name('mostrarlibrosautor');
 
+Route::get('descargarlibros/{id}', [AutoresController::class, 'api'])->name('descargarlibros');
+
+Route::get('descargarunlibro/{id}', [LibroController::class, 'descargarlibro'])->name('descargarlibroenconcreto');
+
 Route::get('listado/{id}', [LibroController::class, 'destroy'])->name('borrar');
 
 Route::get('modificar/{id}', [LibroController::class, 'show'])->name('modificar');
