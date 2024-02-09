@@ -16,8 +16,7 @@ class AutoresController extends Controller
     }
 
     /**
-     * Show the form for s.autores_id' in 'where clause'
-reating a new resource.
+     * Show the form for s.autores_id' in 'where clause' reating a new resource.
      */
     public function create()
     {
